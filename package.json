@@ -26,6 +26,7 @@
   "main": "./dist/index.js",
   "icon": "res/icon.png",
   "files": [
+    "CHANGELOG.md",
     "LICENSE.md",
     "dist/*",
     "res/*"
@@ -53,7 +54,8 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "vscode:prepublish": "nr build",
-    "release": "bumpp",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "bumpp -x \"nr changelog\" -a",
     "ext:package": "vsce package --no-dependencies",
     "ext:publish": "vsxpub --no-dependencies"
   },
@@ -64,6 +66,7 @@
     "@types/vscode": "^1.97.0",
     "@vscode/vsce": "^3.2.2",
     "bumpp": "^10.0.3",
+    "conventional-changelog-cli": "^5.0.0",
     "eslint": "^9.20.1",
     "esno": "^4.8.0",
     "ovsx": "^0.10.5",
